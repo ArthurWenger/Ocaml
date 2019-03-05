@@ -1,0 +1,20 @@
+### Starting build.
+# Target: freq.mli.depends, tags: { package(core), ppx(ppx-jane -as-ppx), bin_annot, debug, extension:mli, file:freq.mli, ocaml, ocamldep, quiet, short_paths, thread }
+ocamlfind ocamldep -package core -ppx 'ppx-jane -as-ppx' -modules freq.mli > freq.mli.depends # cached
+# Target: freq.cmi, tags: { package(core), ppx(ppx-jane -as-ppx), bin_annot, byte, compile, debug, extension:mli, file:freq.mli, interf, ocaml, quiet, short_paths, thread }
+ocamlfind ocamlc -c -w A-4-33-40-41-42-43-34-44 -strict-sequence -g -bin-annot -short-paths -thread -package core -ppx 'ppx-jane -as-ppx' -o freq.cmi freq.mli # cached
+# Target: freq.ml.depends, tags: { package(core), ppx(ppx-jane -as-ppx), bin_annot, debug, extension:ml, file:freq.ml, ocaml, ocamldep, quiet, short_paths, thread }
+ocamlfind ocamldep -package core -ppx 'ppx-jane -as-ppx' -modules freq.ml > freq.ml.depends
+# Target: counter.mli.depends, tags: { package(core), ppx(ppx-jane -as-ppx), bin_annot, debug, extension:mli, file:counter.mli, ocaml, ocamldep, quiet, short_paths, thread }
+ocamlfind ocamldep -package core -ppx 'ppx-jane -as-ppx' -modules counter.mli > counter.mli.depends # cached
+# Target: counter.cmi, tags: { package(core), ppx(ppx-jane -as-ppx), bin_annot, byte, compile, debug, extension:mli, file:counter.mli, interf, ocaml, quiet, short_paths, thread }
+ocamlfind ocamlc -c -w A-4-33-40-41-42-43-34-44 -strict-sequence -g -bin-annot -short-paths -thread -package core -ppx 'ppx-jane -as-ppx' -o counter.cmi counter.mli # cached
+# Target: freq.cmo, tags: { package(core), ppx(ppx-jane -as-ppx), bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:freq.cmo, file:freq.ml, implem, ocaml, quiet, short_paths, thread }
+ocamlfind ocamlc -c -w A-4-33-40-41-42-43-34-44 -strict-sequence -g -bin-annot -short-paths -thread -package core -ppx 'ppx-jane -as-ppx' -o freq.cmo freq.ml
+# Target: counter.ml.depends, tags: { package(core), ppx(ppx-jane -as-ppx), bin_annot, debug, extension:ml, file:counter.ml, ocaml, ocamldep, quiet, short_paths, thread }
+ocamlfind ocamldep -package core -ppx 'ppx-jane -as-ppx' -modules counter.ml > counter.ml.depends # cached
+# Target: counter.cmo, tags: { package(core), ppx(ppx-jane -as-ppx), bin_annot, byte, compile, debug, extension:cmo, extension:ml, file:counter.cmo, file:counter.ml, implem, ocaml, quiet, short_paths, thread }
+ocamlfind ocamlc -c -w A-4-33-40-41-42-43-34-44 -strict-sequence -g -bin-annot -short-paths -thread -package core -ppx 'ppx-jane -as-ppx' -o counter.cmo counter.ml # cached
+# Target: freq.byte, tags: { package(core), ppx(ppx-jane -as-ppx), bin_annot, byte, debug, dont_link_with, extension:byte, file:freq.byte, link, ocaml, program, quiet, short_paths, thread }
+ocamlfind ocamlc -linkpkg -g -thread -package core counter.cmo freq.cmo -o freq.byte
+# Compilation successful.
